@@ -2,7 +2,7 @@ from html.parser import HTMLParser
 from io import StringIO
 import csv
 from dateutil import parser
-from datetime import datetime
+from datetime import datetime, timedelta
 
 class TableHTMLParser(HTMLParser):
     def __init__(self):
@@ -211,7 +211,7 @@ def extract_moon_phases(csv_string):
     reader = csv.reader(csv_input)
     
     # Write the header for the output CSV
-    writer.writerow(["Day", "Phase"])
+    writer.writerow(["Date", "Phase"])
     
     # Skip the header of the input CSV
     next(reader)
@@ -236,14 +236,14 @@ def reformat_moon_dates(csv_string, month, year):
     reader = csv.reader(csv_input)
     
     # Write the header for the output CSV
-    writer.writerow(["Day", "Phase"])
+    writer.writerow(["Date", "Phase"])
     
     # Iterate through each row of the input CSV
     for row in reader:
-        day, phase = row
-        if day != "Day":  # Skip the header row
+        date, phase = row
+        if date != "Date":  # Skip the header row
             # Parse the day and convert it to the desired format
-            day_number = day.split()[1]  # Extract the day number
+            day_number = date.split()[1]  # Extract the day number
             # Construct the date string in the format YYYY-MM-DD
             date_str = f"{year}-{datetime.strptime(month, '%b').month:02d}-{int(day_number):02d}"
             # Write the reformatted date and phase to the output CSV
@@ -251,3 +251,50 @@ def reformat_moon_dates(csv_string, month, year):
     
     # Return the output CSV string
     return csv_output.getvalue()
+
+def create_person_csv(start_date, end_date, name):
+    # List to hold each line of the CSV
+    csv_lines = ["Date,Name"]
+    # Generate each line
+    current_date = start_date
+    while current_date <= end_date:
+        csv_lines.append(f"{current_date.strftime('%Y-%m-%d')},{name}")
+        current_date += timedelta(days=1)
+
+    # Join the lines into a single string
+    return "\n".join(csv_lines)
+
+def filter_high_tides_within_time_range(df, start_time, end_time, name='Ilha is Good'):
+    """
+    Filters rows in the dataframe where the high tide time falls within a specified time range.
+    
+    Parameters:
+    - df: DataFrame with a 'High Tide Time' column of datetime type.
+    - start_time: datetime.time, start of the time range (inclusive).
+    - end_time: datetime.time, end of the time range (inclusive).
+    
+    Returns:
+    - DataFrame with columns 'Date' and 'Name', where each row represents a date where the high tide falls within the specified time range.
+    """
+    # Copy the dataframe to avoid modifying the original
+    filtered_df = df.copy()
+    
+    # Extract date from 'High Tide Time' and create a new column
+    filtered_df['Date'] = filtered_df['High Tide Time'].dt.date
+    
+    # Assign a fixed value 'Ilha is Good' to the 'Name' column
+    filtered_df['Name'] = name
+    
+    # Convert 'High Tide Time' to time for comparison
+    filtered_df['Time'] = filtered_df['High Tide Time'].dt.time
+    
+    # Filter rows where 'High Tide Time' is within the specified time range
+    filtered_df = filtered_df[(filtered_df['Time'] >= start_time) & (filtered_df['Time'] <= end_time)]
+    
+    # Select only 'Date' and 'Name' columns
+    filtered_df = filtered_df[['Date', 'Name']]
+    
+    # Drop duplicate rows
+    filtered_df = filtered_df.drop_duplicates()
+    
+    return filtered_df
