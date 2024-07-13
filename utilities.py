@@ -3,6 +3,7 @@ from io import StringIO
 import csv
 from dateutil import parser
 from datetime import datetime, timedelta
+import data
 
 class TableHTMLParser(HTMLParser):
     def __init__(self):
@@ -298,3 +299,16 @@ def filter_high_tides_within_time_range(df, start_time, end_time, name='Ilha is 
     filtered_df = filtered_df.drop_duplicates()
     
     return filtered_df
+
+def plot_camp(df, ax):
+    # Map 'Location' to a numerical value
+    df['LocationNum'] = df['Location'].map(data.name_to_number)
+
+    # Assuming a fixed duration for visualization, adjusted to start half a day earlier
+    duration = 1  # Duration of one day
+    half_day = 0.5  # Half day in Matplotlib's date format
+
+    # Plot Surf Camp dates
+    for location, group in df.groupby('Location'):
+        bars = [(date_num - half_day, 1) for date_num in group['DateNum']]  # Assuming each event lasts 1 day
+        ax.broken_barh(bars, (data.name_to_number[location] - 0.4, 0.8), facecolors=colors['Surf Camp'])

@@ -186,79 +186,74 @@ Date,Name,Location
 2024-10-23,Surf Clinic,Emboaca
 2024-10-24,Surf Clinic,Icarai
 2024-10-25,Surf Clinic,Icarai
-2024-10-26,Surf Clinic,Icarai 
+2024-10-26,Surf Clinic,Icarai
 """
 
-nate_and_soph_csv_test = create_person_csv(datetime(2024, 10, 1), datetime(2024, 12, 7), "Nate and Soph")
-
-nate_and_soph_csv = """
-Date, Name
-2024-10-01, Nate and Soph
-2024-10-02, Nate and Soph
-2024-10-03, Nate and Soph
-2024-10-04, Nate and Soph
-2024-10-05, Nate and Soph
-2024-10-06, Nate and Soph
-2024-10-07, Nate and Soph
-2024-10-08, Nate and Soph
-2024-10-09, Nate and Soph
-2024-10-10, Nate and Soph
-2024-10-11, Nate and Soph
-2024-10-12, Nate and Soph
-2024-10-13, Nate and Soph
-2024-10-14, Nate and Soph
-2024-10-15, Nate and Soph
-2024-10-16, Nate and Soph
-2024-10-17, Nate and Soph
-2024-10-18, Nate and Soph
-2024-10-19, Nate and Soph
-2024-10-20, Nate and Soph
-2024-10-21, Nate and Soph
-2024-10-22, Nate and Soph
-2024-10-23, Nate and Soph
-2024-10-24, Nate and Soph
-2024-10-25, Nate and Soph
-2024-10-26, Nate and Soph
-2024-10-27, Nate and Soph
-2024-10-28, Nate and Soph
-2024-10-29, Nate and Soph
-2024-10-30, Nate and Soph
-2024-10-31, Nate and Soph
-2024-11-01, Nate and Soph
-2024-11-02, Nate and Soph
-2024-11-03, Nate and Soph
-2024-11-04, Nate and Soph
-2024-11-05, Nate and Soph
-2024-11-06, Nate and Soph
-2024-11-07, Nate and Soph
-2024-11-08, Nate and Soph
-2024-11-09, Nate and Soph
-2024-11-10, Nate and Soph
-2024-11-11, Nate and Soph
-2024-11-12, Nate and Soph
-2024-11-13, Nate and Soph
-2024-11-14, Nate and Soph
-2024-11-15, Nate and Soph
-2024-11-16, Nate and Soph
-2024-11-17, Nate and Soph
-2024-11-18, Nate and Soph
-2024-11-19, Nate and Soph
-2024-11-20, Nate and Soph
-2024-11-21, Nate and Soph
-2024-11-22, Nate and Soph
-2024-11-23, Nate and Soph
-2024-11-24, Nate and Soph
-2024-11-25, Nate and Soph
-2024-11-26, Nate and Soph
-2024-11-27, Nate and Soph
-2024-11-28, Nate and Soph
-2024-11-29, Nate and Soph
-2024-11-30, Nate and Soph
-2024-12-01, Nate and Soph
-2024-12-02, Nate and Soph
-2024-12-03, Nate and Soph
-2024-12-04, Nate and Soph
-2024-12-05, Nate and Soph
-2024-12-06, Nate and Soph
-2024-12-07, Nate and Soph
+# October 1st to 13th
+oct_wild_north_csv = """
+Date,Name,Location
+2024-10-01,Wild North,Tatajuba
+2024-10-02,Wild North,Maceio
+2024-10-03,Wild North,Barra Grande
+2024-10-04,Wild North,Aimbere Resort
+2024-10-05,Wild North,Pontal
+2024-10-06,Wild North,Ilha do Caju
+2024-10-07,Wild North,Arporador
+2024-10-08,Wild North,Arporador
+2024-10-09,Wild North,Atins
+2024-10-10,Wild North,Lencois Maranhenses
+2024-10-11,Wild North,Atins
+2024-10-12,Wild North,Maceio
+2024-10-13,Wild North,Maceio
 """
+
+# November 6st to 18th
+nov_wild_north_csv = """
+Date,Name,Location
+2024-11-06,Wild North,Tatajuba
+2024-11-07,Wild North,Maceio
+2024-11-08,Wild North,Barra Grande
+2024-11-09,Wild North,Aimbere Resort
+2024-11-10,Wild North,Pontal
+2024-11-11,Wild North,Ilha do Caju
+2024-11-12,Wild North,Arporador
+2024-11-13,Wild North,Arporador
+2024-11-14,Wild North,Atins
+2024-11-15,Wild North,Lencois Maranhenses
+2024-11-16,Wild North,Atins
+2024-11-17,Wild North,Maceio
+2024-11-18,Wild North,Maceio
+"""
+
+# create a dict with location as key and number as value, where number increases moving west from Fortaleza
+
+name_to_number = {
+    'Fortaleza': 1,
+    'Taiba': 2,
+    'Pecem': 3,
+    'Paracuru': 4,
+    'Guajiru': 5,
+    'Emboaca': 6,
+    'Icarai': 7,
+    'Ilha do Guajiru': 8,
+    'Prea': 9,
+    'Jericoacoara': 10,
+    'Tatajuba': 11,
+    'Maceio': 12,
+    'Barra Grande': 13,
+    'Aimbere Resort': 14,
+    'Pontal': 15,
+    'Ilha do Caju': 16,
+    'Arporador': 17,
+    #'Parnaiba': 14,
+    #'Tutoia': 15,
+    'Atins': 18,
+    'Lencois Maranhenses': 18,
+    'Moon Phases': 20,
+    'Nate and Soph': 21,
+    'Julia': 22
+}
+
+nate_and_soph_csv = create_person_csv(datetime(2024, 10, 1), datetime(2024, 12, 7), "Nate and Soph")
+
+julia_csv = create_person_csv(datetime(2024, 10, 15), datetime(2024, 11, 30), "Julia")
