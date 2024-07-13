@@ -191,67 +191,135 @@ Date,Name,Location
 
 # October 1st to 13th
 oct_wild_north_csv = """
-Date,Name,Location
-2024-10-01,Wild North,Tatajuba
-2024-10-02,Wild North,Maceio
-2024-10-03,Wild North,Barra Grande
-2024-10-04,Wild North,Aimbere Resort
-2024-10-05,Wild North,Pontal
-2024-10-06,Wild North,Ilha do Caju
-2024-10-07,Wild North,Arporador
-2024-10-08,Wild North,Arporador
-2024-10-09,Wild North,Atins
-2024-10-10,Wild North,Lencois Maranhenses
-2024-10-11,Wild North,Atins
-2024-10-12,Wild North,Maceio
-2024-10-13,Wild North,Maceio
+Date,Day,Name,Location
+2024-10-01,1,Wild North,Tatajuba
+2024-10-02,2,Wild North,Maceio
+2024-10-03,3,Wild North,Macapa
+2024-10-03,3,Wild North,Barra Grande
+2024-10-04,4,Wild North,Aimbere Resort
+2024-10-05,5,Wild North,Pontal
+2024-10-06,6,Wild North,Ilha do Caju
+2024-10-07,7,Wild North,Arporador
+2024-10-08,8,Wild North,Arporador
+2024-10-09,9,Wild North,Atins
+2024-10-10,10,Wild North,Lencois Maranhenses
+2024-10-10,10,Wild North,Atins
+2024-10-11,11,Wild North,Atins
+2024-10-12,12,Wild North,Maceio
+2024-10-13,13,Wild North,Maceio
 """
 
 # November 6st to 18th
 nov_wild_north_csv = """
-Date,Name,Location
-2024-11-06,Wild North,Tatajuba
-2024-11-07,Wild North,Maceio
-2024-11-08,Wild North,Barra Grande
-2024-11-09,Wild North,Aimbere Resort
-2024-11-10,Wild North,Pontal
-2024-11-11,Wild North,Ilha do Caju
-2024-11-12,Wild North,Arporador
-2024-11-13,Wild North,Arporador
-2024-11-14,Wild North,Atins
-2024-11-15,Wild North,Lencois Maranhenses
-2024-11-16,Wild North,Atins
-2024-11-17,Wild North,Maceio
-2024-11-18,Wild North,Maceio
+Date,Day,Name,Location
+2024-11-06,1,Wild North,Tatajuba
+2024-11-07,2,Wild North,Maceio
+2024-11-08,3,Wild North,Macapa
+2024-11-08,3,Wild North,Barra Grande
+2024-11-09,4,Wild North,Aimbere Resort
+2024-11-10,5,Wild North,Pontal
+2024-11-11,6,Wild North,Ilha do Caju
+2024-11-12,7,Wild North,Arporador
+2024-11-13,8,Wild North,Arporador
+2024-11-14,9,Wild North,Atins
+2024-11-15,10,Wild North,Lencois Maranhenses
+2024-11-15,10,Wild North,Atins
+2024-11-16,11,Wild North,Atins
+2024-11-17,12,Wild North,Maceio
+2024-11-18,13,Wild North,Maceio
 """
 
+# October 16th to 29th
+oct_classic_csv = """
+Date,Day,Name,Location
+2024-10-16,1,Classic,Taiba
+2024-10-17,2,Classic,Taiba
+2024-10-18,3,Classic,Paracuru
+2024-10-19,4,Classic,Paracuru
+2024-10-20,5,Classic,Guajiru
+2024-10-21,6,Classic,Emboaca
+2024-10-21,6,Classic,Guajiru
+2024-10-22,7,Classic,Icarai
+2024-10-23,8,Classic,Moitas
+2024-10-23,8,Classic,Icarai
+2024-10-24,9,Classic,Ilha do Guajiru
+2024-10-25,10,Classic,Ilha do Guajiru
+2024-10-26,11,Classic,Jericoacoara
+2024-10-27,12,Classic,Guriu
+2024-10-27,12,Classic,Jericoacoara
+2024-10-28,13,Classic,Tatajuba
+2024-10-28,13,Classic,Jericoacoara
+2024-10-29,14,Classic,Jericoacoara
+"""
+
+# November 21th to 30th
+nov_classic_express_csv = """
+Date,Day,Name,Location
+2024-11-21,1,Classic Express,Taiba
+2024-11-22,2,Classic Express,Guajiru
+2024-11-23,3,Classic Express,Emboaca
+2024-11-23,3,Classic Express,Guajiru
+2024-11-24,4,Classic Express,Icarai
+2024-11-25,5,Classic Express,Moitas
+2024-11-25,5,Classic Express,Icarai
+2024-11-26,6,Classic Express,Ilha do Guajiru
+2024-11-27,7,Classic Express,Ilha do Guajiru
+2024-11-28,8,Classic Express,Jericoacoara
+2024-11-29,9,Classic Express,Tatajuba
+2024-11-29,9,Classic Express,Jericoacoara
+2024-11-30,10,Classic Express,Jericoacoara
+"""
+
+# November 4th to 15th
+nov_nomade_csv = """
+Date,Day,Name,Location
+2024-11-04,1,Nomade,Ilha do Guajiru
+2024-11-05,2,Nomade,Ilha do Guajiru
+2024-11-06,3,Nomade,Prea
+2024-11-07,4,Nomade,Tatajuba
+2024-11-08,5,Nomade,Tatajuba
+2024-11-09,6,Nomade,Maceio
+2024-11-10,7,Nomade,Macapa
+2024-11-11,8,Nomade,Macapa
+2024-11-12,9,Nomade,Pontal
+2024-11-13,10,Nomade,Arporador
+2024-11-14,11,Nomade,Arporador
+2024-11-15,12,Nomade,Ilha do Guajiru
+"""
 # create a dict with location as key and number as value, where number increases moving west from Fortaleza
 
+factor = 0.5
+shift = 5
 name_to_number = {
-    'Fortaleza': 1,
-    'Taiba': 2,
-    'Pecem': 3,
-    'Paracuru': 4,
-    'Guajiru': 5,
-    'Emboaca': 6,
-    'Icarai': 7,
-    'Ilha do Guajiru': 8,
-    'Prea': 9,
-    'Jericoacoara': 10,
-    'Tatajuba': 11,
-    'Maceio': 12,
-    'Barra Grande': 13,
-    'Aimbere Resort': 14,
-    'Pontal': 15,
-    'Ilha do Caju': 16,
-    'Arporador': 17,
-    #'Parnaiba': 14,
-    #'Tutoia': 15,
-    'Atins': 18,
-    'Lencois Maranhenses': 18,
-    'Moon Phases': 20,
-    'Nate and Soph': 21,
-    'Julia': 22
+    'Taiba': 26.5*factor,
+    'Pecem': (21.7-shift)*factor,
+    'Paracuru': 40.3*factor,
+    'Guajiru': (58.5-shift)*factor,
+    'Emboaca': 64.2*factor,
+    'Icarai': (90.1-shift)*factor,
+    'Moitas': 94.2*factor,
+    'Ilha do Guajiru': 111.61*factor,
+    'Prea': (146.4-2*shift)*factor,
+    'Jericoacoara': (156.8-shift)*factor,
+    'Guriu': 163*factor,
+    'Tatajuba': (169.2+shift)*factor,
+    'Maceio': 188.7*factor,
+    'Barra Grande': (220.9-shift)*factor,
+    #'Macapa': 223.25*factor,
+    'Macapa': 225*factor,
+    'Aimbere Resort': 233.4*factor,
+    'Pontal': 252.33*factor,
+    'Ilha do Caju': 268.2*factor,
+    'Arporador': 295.7*factor,
+    #'Parnaiba': 14*factor,
+    #'Tutoia': 15*factor,
+    'Atins': 325.65*factor,
+    'Lencois Maranhenses': 342*factor,
+    'Moon Phases': -40*factor,
+    'Nate and Soph Dates': -30*factor,
+    'Julia Dates': -20*factor,
+    'Kat Dates': -10*factor,
+    'Jill and Steve Dates': 0*factor
 }
 
 nate_and_soph_csv = create_person_csv(datetime(2024, 10, 1), datetime(2024, 12, 7), "Nate and Soph")
