@@ -325,3 +325,5 @@ name_to_number = {
 nate_and_soph_csv = create_person_csv(datetime(2024, 10, 1), datetime(2024, 12, 7), "Nate and Soph")
 
 julia_csv = create_person_csv(datetime(2024, 10, 15), datetime(2024, 11, 30), "Julia")
+
+jill_and_steve_csv = create_person_csv(datetime(2024, 11, 3), datetime(2024, 11, 17), "Jill and Steve")
