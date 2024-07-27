@@ -315,11 +315,12 @@ name_to_number = {
     #'Tutoia': 15*factor,
     'Atins': 325.65*factor,
     'Lencois Maranhenses': 342*factor,
-    'Moon Phases': -40*factor,
-    'Nate and Soph Dates': -30*factor,
-    'Julia Dates': -20*factor,
-    'Kat Dates': -10*factor,
-    'Jill and Steve Dates': 0*factor
+    'Moon Phases': -50*factor,
+    'Nate and Soph Dates': -40*factor,
+    'Julia Dates': -30*factor,
+    'Kat Dates': -20*factor,
+    'Jill and Steve Dates': -10*factor,
+    'Sarah and Taylor Dates': 0*factor
 }
 
 nate_and_soph_csv = create_person_csv(datetime(2024, 10, 1), datetime(2024, 12, 7), "Nate and Soph")
@@ -327,3 +328,5 @@ nate_and_soph_csv = create_person_csv(datetime(2024, 10, 1), datetime(2024, 12, 
 julia_csv = create_person_csv(datetime(2024, 10, 15), datetime(2024, 11, 30), "Julia")
 
 jill_and_steve_csv = create_person_csv(datetime(2024, 11, 3), datetime(2024, 11, 17), "Jill and Steve")
+
+sarah_and_taylor_csv = create_person_csv(datetime(2024, 10, 25), datetime(2024, 11, 2), "Sarah and Taylor")
