@@ -286,14 +286,50 @@ Date,Day,Name,Location
 2024-11-14,11,Nomade,Arporador
 2024-11-15,12,Nomade,Ilha do Guajiru
 """
+
+# Nate and Soph Itenerary
+nate_and_soph_itin_csv = """
+Date,Name,Location
+2024-10-14,N+S,Taiba
+2024-10-15,N+S,Taiba
+2024-10-16,N+S,Taiba
+2024-10-17,N+S,Taiba
+2024-10-18,N+S,Taiba
+2024-10-19,N+S,Pecem
+2024-10-20,N+S,Paracuru
+2024-10-21,N+S,Paracuru
+2024-10-22,N+S,Guajiru
+2024-10-23,N+S,Emboaca
+2024-10-24,N+S,Icarai
+2024-10-25,N+S,Icarai
+2024-10-26,N+S,Icarai
+2024-10-28,N+S,Ilha do Guajiru
+2024-10-29,N+S,Ilha do Guajiru
+2024-10-30,N+S,Ilha do Guajiru
+2024-10-31,N+S,Ilha do Guajiru
+2024-11-01,N+S,Ilha do Guajiru
+2024-11-02,N+S,Ilha do Guajiru
+2024-11-03,N+S,Ilha do Guajiru
+2024-11-03,N+S,Prea
+2024-11-04,N+S,Prea
+2024-11-05,N+S,Prea
+2024-11-06,N+S,Prea
+2024-11-07,N+S,Prea
+2024-11-08,N+S,Prea
+2024-11-09,N+S,Prea
+2024-11-10,N+S,Prea
+2024-11-11,N+S,Prea
+"""
 # create a dict with location as key and number as value, where number increases moving west from Fortaleza
 
 factor = 0.5
 shift = 5
 name_to_number = {
-    'Taiba': 26.5*factor,
+    'Cumbuco': (16-shift)*factor, #rough eyeball
     'Pecem': (21.7-shift)*factor,
+    'Taiba': 26.5*factor,
     'Paracuru': 40.3*factor,
+    'Lagoinha': (47.0)*factor, #rough eyeball
     'Guajiru': (58.5-shift)*factor,
     'Emboaca': 64.2*factor,
     'Icarai': (90.1-shift)*factor,
