@@ -290,19 +290,30 @@ Date,Day,Name,Location
 # Nate and Soph Itenerary
 nate_and_soph_itin_csv = """
 Date,Name,Location
+2024-10-02,N+S,Cumbuco
+2024-10-03,N+S,Cumbuco
+2024-10-04,N+S,Cumbuco
+2024-10-05,N+S,Cumbuco
+2024-10-13,N+S,Taiba
 2024-10-14,N+S,Taiba
 2024-10-15,N+S,Taiba
 2024-10-16,N+S,Taiba
 2024-10-17,N+S,Taiba
 2024-10-18,N+S,Taiba
+2024-10-19,N+S,Taiba
+2024-10-20,N+S,Taiba
+2024-10-21,N+S,Taiba
 2024-10-19,N+S,Pecem
 2024-10-20,N+S,Paracuru
 2024-10-21,N+S,Paracuru
 2024-10-22,N+S,Guajiru
+2024-10-23,N+S,Guajiru
 2024-10-23,N+S,Emboaca
 2024-10-24,N+S,Icarai
 2024-10-25,N+S,Icarai
 2024-10-26,N+S,Icarai
+2024-10-27,N+S,Icarai
+2024-10-28,N+S,Icarai
 2024-10-28,N+S,Ilha do Guajiru
 2024-10-29,N+S,Ilha do Guajiru
 2024-10-30,N+S,Ilha do Guajiru
@@ -319,7 +330,68 @@ Date,Name,Location
 2024-11-09,N+S,Prea
 2024-11-10,N+S,Prea
 2024-11-11,N+S,Prea
+2024-11-12,N+S,Prea
+2024-11-13,N+S,Prea
 """
+
+# Julia Itenerary
+julia_itin_csv = """
+Date,Name,Location
+2024-10-24,J,Ilha do Guajiru
+2024-10-25,J,Ilha do Guajiru
+2024-10-26,J,Ilha do Guajiru
+2024-10-27,J,Ilha do Guajiru
+2024-10-28,J,Ilha do Guajiru
+2024-10-29,J,Ilha do Guajiru
+2024-10-30,J,Ilha do Guajiru
+2024-10-31,J,Ilha do Guajiru
+2024-11-01,J,Ilha do Guajiru
+2024-11-02,J,Ilha do Guajiru
+2024-11-03,J,Ilha do Guajiru
+2024-11-03,J,Prea
+2024-11-04,J,Prea
+2024-11-05,J,Prea
+2024-11-06,J,Prea
+2024-11-07,J,Prea
+2024-11-08,J,Prea
+2024-11-09,J,Prea
+2024-11-10,J,Prea
+2024-11-11,J,Prea
+2024-11-12,J,Prea
+2024-11-13,J,Prea
+"""
+
+# Jill and Steve Itenerary
+jill_and_steve_itin_csv = """
+Date,Name,Location
+2024-10-12,J+S,Taiba
+2024-10-13,J+S,Taiba
+2024-10-14,J+S,Taiba
+2024-10-15,J+S,Taiba
+2024-10-16,J+S,Taiba
+2024-10-17,J+S,Taiba
+2024-10-18,J+S,Paracuru
+2024-10-19,J+S,Paracuru
+2024-10-20,J+S,Guajiru
+2024-10-21,J+S,Emboaca
+2024-10-21,J+S,Guajiru
+2024-10-22,J+S,Icarai
+2024-10-23,J+S,Moitas
+2024-10-23,J+S,Icarai
+2024-10-24,J+S,Ilha do Guajiru
+2024-10-25,J+S,Ilha do Guajiru
+2024-10-26,J+S,Jericoacoara
+2024-10-27,J+S,Guriu
+2024-10-27,J+S,Jericoacoara
+2024-10-28,J+S,Tatajuba
+2024-10-28,J+S,Jericoacoara
+2024-10-29,J+S,Jericoacoara
+2024-10-29,J+S,Ilha do Guajiru
+2024-10-30,J+S,Ilha do Guajiru
+2024-10-31,J+S,Ilha do Guajiru
+2024-11-01,J+S,Ilha do Guajiru
+"""
+
 # create a dict with location as key and number as value, where number increases moving west from Fortaleza
 
 factor = 0.5
@@ -363,6 +435,6 @@ nate_and_soph_csv = create_person_csv(datetime(2024, 10, 1), datetime(2024, 12, 
 
 julia_csv = create_person_csv(datetime(2024, 10, 15), datetime(2024, 11, 30), "Julia")
 
-jill_and_steve_csv = create_person_csv(datetime(2024, 11, 3), datetime(2024, 11, 17), "Jill and Steve")
+jill_and_steve_csv = create_person_csv(datetime(2024, 10, 12), datetime(2024, 11, 1), "Jill and Steve")
 
 sarah_and_taylor_csv = create_person_csv(datetime(2024, 10, 25), datetime(2024, 11, 2), "Sarah and Taylor")
