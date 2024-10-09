@@ -294,6 +294,16 @@ Date,Name,Location
 2024-10-03,N+S,Cumbuco
 2024-10-04,N+S,Cumbuco
 2024-10-05,N+S,Cumbuco
+2024-10-06,N+S,Cumbuco
+2024-10-07,N+S,Cumbuco
+2024-10-07,N+S,Taiba
+2024-10-08,N+S,Taiba
+2024-10-09,N+S,Taiba
+2024-10-09,N+S,Icarai
+2024-10-10,N+S,Icarai
+2024-10-11,N+S,Icarai
+2024-10-12,N+S,Icarai
+2024-10-13,N+S,Icarai
 2024-10-13,N+S,Taiba
 2024-10-14,N+S,Taiba
 2024-10-15,N+S,Taiba
@@ -309,6 +319,7 @@ Date,Name,Location
 2024-10-22,N+S,Guajiru
 2024-10-23,N+S,Guajiru
 2024-10-23,N+S,Emboaca
+2024-10-24,N+S,Guajiru
 2024-10-24,N+S,Icarai
 2024-10-25,N+S,Icarai
 2024-10-26,N+S,Icarai
@@ -332,11 +343,31 @@ Date,Name,Location
 2024-11-11,N+S,Prea
 2024-11-12,N+S,Prea
 2024-11-13,N+S,Prea
+2024-11-13,N+S,Macapa
+2024-11-14,N+S,Macapa
+2024-11-15,N+S,Macapa
+2024-11-16,N+S,Macapa
+2024-11-17,N+S,Macapa
+2024-11-18,N+S,Macapa
+2024-11-19,N+S,Macapa
+2024-11-20,N+S,Macapa
+2024-11-21,N+S,Macapa
+2024-11-22,N+S,Macapa
+2024-11-23,N+S,Macapa
 """
 
 # Julia Itenerary
 julia_itin_csv = """
 Date,Name,Location
+2024-10-16,J,Icarai
+2024-10-17,J,Icarai
+2024-10-18,J,Icarai
+2024-10-19,J,Icarai
+2024-10-20,J,Icarai
+2024-10-21,J,Icarai
+2024-10-22,J,Icarai
+2024-10-23,J,Icarai
+2024-10-24,J,Icarai
 2024-10-24,J,Ilha do Guajiru
 2024-10-25,J,Ilha do Guajiru
 2024-10-26,J,Ilha do Guajiru
@@ -359,6 +390,17 @@ Date,Name,Location
 2024-11-11,J,Prea
 2024-11-12,J,Prea
 2024-11-13,J,Prea
+2024-11-13,J,Macapa
+2024-11-14,J,Macapa
+2024-11-15,J,Macapa
+2024-11-16,J,Macapa
+2024-11-17,J,Macapa
+2024-11-18,J,Macapa
+2024-11-19,J,Macapa
+2024-11-20,J,Macapa
+2024-11-21,J,Macapa
+2024-11-22,J,Macapa
+2024-11-23,J,Macapa
 """
 
 # Jill and Steve Itenerary
@@ -433,7 +475,7 @@ name_to_number = {
 
 nate_and_soph_csv = create_person_csv(datetime(2024, 10, 1), datetime(2024, 12, 7), "Nate and Soph")
 
-julia_csv = create_person_csv(datetime(2024, 10, 15), datetime(2024, 11, 30), "Julia")
+julia_csv = create_person_csv(datetime(2024, 10, 15), datetime(2024, 11, 25), "Julia")
 
 jill_and_steve_csv = create_person_csv(datetime(2024, 10, 12), datetime(2024, 11, 1), "Jill and Steve")
 
